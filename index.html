@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Application</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
 
-  <!-- TAILWIND CSS-->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@0.575.0/dist/umd/lucide.min.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <style>
-    /* GOOGLE FONTS */
-    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
-    * {
-      font-family: "Geist", sans-serif;
-      font-size: 30px;
-    }
-  </style>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+
+        body {
+            font-family: "Geist", sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .active-tab {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
 </head>
 
-<body class="p-4 md:p-8">
-  <div class="max-w-6xl mx-auto">
-    <!-- Header Section -->
-    <header>
-      <h1 class="text-2xl font-bold text-[#002C5C]">Job Application Tracker</h1>
-    </header>
 
-    <!-- DASHBOARD STATS SECTION -->
-     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<body class="p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header Section-->
+        <header class="mb-8">
+            <h1 class="text-2xl font-bold text-slate-800">Job Application Tracker</h1>
+        </header>
+
+
+        <!-- Dashboard Stats Section -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            
             <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
                 <p class="text-sm font-medium text-slate-500 mb-1">Total</p>
                 <p id="stat-total" class="text-3xl font-bold text-blue-900">0</p>
             </div>
-      
+            
             <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
                 <p class="text-sm font-medium text-slate-500 mb-1">Interview</p>
                 <p id="stat-interview" class="text-3xl font-bold text-emerald-500">0</p>
@@ -47,12 +59,31 @@
                 <p id="stat-rejected" class="text-3xl font-bold text-rose-500">0</p>
             </div>
         </section>
-  </div>
 
 
-  <script>
-    
-  </script>
+        <!-- Main Content Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-lg font-bold text-slate-800">Available Jobs</h2>
+            <span id="job-count-badge" class="text-sm text-slate-500">0 jobs</span>
+        </div>
+
+
+        <!-- Tab Controls -->
+        <div class="flex space-x-2 mb-8 border-b border-slate-200 pb-4">
+            <button onclick="setFilter('all')" id="tab-all"
+                class="px-4 py-1.5 rounded-md text-sm font-medium transition-colors bg-blue-600 text-white">All</button>
+            <button onclick="setFilter('interview')" id="tab-interview"
+                class="px-4 py-1.5 rounded-md text-sm font-medium text-slate-600 hover:bg-slate-200">Interview</button>
+            <button onclick="setFilter('rejected')" id="tab-rejected"
+                class="px-4 py-1.5 rounded-md text-sm font-medium text-slate-600 hover:bg-slate-200">Rejected</button>
+        </div>
+
+
+
+    </div>
+
 </body>
 
+
 </html>
+
