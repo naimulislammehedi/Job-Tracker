@@ -80,3 +80,25 @@ let jobs = [{
     status: "applied"
 }
 ];
+
+// Current Filter 
+let currentFilter = 'all';
+
+// Lucide Icon
+function refreshIcons() {
+    lucide.createIcons();
+}
+
+// UPDATE STATS DASHBOARD 
+function updateStats() {
+    const total = jobs.length;
+    const interview = jobs.filter(j => j.status === 'interview').length;
+    const rejected = jobs.filter(j => j.status === 'rejected').length;
+
+    document.getElementById('stat-total').innerText = total;
+    document.getElementById('stat-interview').innerText = interview;
+    document.getElementById('stat-rejected').innerText = rejected;
+
+    const filteredCount = currentFilter === 'all' ? total : jobs.filter(j => j.status === currentFilter).length;
+    document.getElementById('job-count-badge').innerText = `${filteredCount} jobs`;
+}
