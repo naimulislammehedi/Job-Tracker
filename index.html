@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Application</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application</title>
 
-    <!-- TAILWIND CSS: Utility-first framework for rapid UI development. 
-     We include it via CDN to avoid local setup and keep the demo lightweight.
-     It provides classes like flex, grid, padding, colors, etc. -->
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- TAILWIND CSS-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-     <!-- Lucide Icons: A clean, consistent icon set. We load the library to use icons like trash-2, map-pin, etc. The script exposes a global `Lucide` object used later to create icons. -->
-      <script src="https://unpkg.com/lucide@0.575.0/dist/umd/lucide.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.575.0/dist/umd/lucide.min.js"></script>
 
-      <style>
-        /* GOOGLE FONTS */
-        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+  <style>
+    /* GOOGLE FONTS */
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
-        * {
-            font-family: "Geist", sans-serif;
-            font-size: 30px;
-        }
-      </style>
+    * {
+      font-family: "Geist", sans-serif;
+      font-size: 30px;
+    }
+  </style>
 </head>
-<body>
-    <h1>Hello World</h1>
-    <i data-lucide="heart"></i>
 
-<script>
-  lucide.createIcons();
-</script>
+<body class="p-4 md:p-8">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header Section -->
+    <header>
+      <h1 class="text-2xl font-bold text-[#002C5C]">Job Application Tracker</h1>
+    </header>
+
+    <!-- DASHBOARD STATS SECTION -->
+     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                <p class="text-sm font-medium text-slate-500 mb-1">Total</p>
+                <p id="stat-total" class="text-3xl font-bold text-blue-900">0</p>
+            </div>
+      
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                <p class="text-sm font-medium text-slate-500 mb-1">Interview</p>
+                <p id="stat-interview" class="text-3xl font-bold text-emerald-500">0</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
+                <p class="text-sm font-medium text-slate-500 mb-1">Rejected</p>
+                <p id="stat-rejected" class="text-3xl font-bold text-rose-500">0</p>
+            </div>
+        </section>
+  </div>
+
+
+  <script>
+    
+  </script>
 </body>
+
 </html>
