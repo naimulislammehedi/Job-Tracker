@@ -102,3 +102,25 @@ function updateStats() {
     const filteredCount = currentFilter === 'all' ? total : jobs.filter(j => j.status === currentFilter).length;
     document.getElementById('job-count-badge').innerText = `${filteredCount} jobs`;
 }
+
+// ----- FILTER HANDLER -----
+function setFilter(filter) {
+    currentFilter = filter;
+
+    const tabs = ['all', 'interview', 'rejected'];
+    tabs.forEach(t => {
+        const el = document.getElementById(`tab-${t}`);
+        if (t === filter) {
+            el.classList.add('bg-blue-600', 'text-white');
+            el.classList.remove('text-slate-600', 'hover:bg-slate-200');
+        } else {
+            el.classList.remove('bg-blue-600', 'text-white');
+            el.classList.add('text-slate-600', 'hover:bg-slate-200');
+        }
+    });
+
+
+    renderJobs();
+}
+
+
